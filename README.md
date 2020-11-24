@@ -5,24 +5,38 @@ apt-get update && apt-get -y upgrade
 #add ram
 
 sudo fallocate -l 4G /swapfile && \
+
 sudo chmod 600 /swapfile && \
+
 sudo mkswap /swapfile && \
+
 sudo swapon /swapfile && \
+
 sudo cp /etc/fstab /etc/fstab.bak && \
+
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab && \
+
 sudo swapon --show
 
 
 #use free -m to check
 
 wget https://github.com/kevacoin-project/kevacoin/releases/download/v0.16.6.0/kevacoin-0.16.6.0.tar.gz
+
 mkdir kevacoin
+
 tar zxvf kevacoin-0.16.6.0.tar.gz -C kevacoincd keva
+
 cd kevacoin
+
 mv kevacoin-0.16.6.0/bin .
+
 cd bin
+
 ./kevacoind -daemon
+
 ./kevacoin-cli stop
+
 cd /root/.kevacoin
 
 #clear 
@@ -36,10 +50,15 @@ vi kevacoin.conf
 #change your own user/password/port
 
 rpcuser=galaxy
+
 rpcpassword=frontier
+
 rpcport=9992
+
 server=1
+
 addressindex=1
+
 txindex=1
 
 #run kevacoin daemon
