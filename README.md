@@ -59,28 +59,47 @@ cd /root
 #python
 
 sudo apt install python3-pip
+
 python3.8 -m pip install pip
+
 python3.8 -m pip install aiohttp
+
 python3.8 -m pip install pylru
+
 python3.8 -m pip install plyvel
+
 python3.8 -m pip install aiorpcx
+
 sudo apt install python3.8-dev
+
 python3.8 -m pip install py-cryptonight
+
 sudo apt-get install libgflags2.2 libgflags-dev
+
 sudo apt-get install librocksdb-dev
+
 sudo apt-get install libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev
+
 python3.8 -m pip install Cython
+
 python3.8 -m pip install git+git://github.com/twmht/python-rocksdb.git
+
 apt-get update && apt-get -y upgrade
 
 #domain
 
 sudo apt-get update
+
 sudo apt-get install software-properties-common
+
 sudo add-apt-repository universe
+
 sudo add-apt-repository ppa:certbot/certbot
+
 sudo apt-get update
+
 sudo apt-get install certbot
+
 sudo certbot certonly --standalone
 
 #setup email and domain
@@ -240,9 +259,9 @@ After=network.target
 
 [Service]
 
-### Uncomment the following line for custom ipfs datastore location
+#Uncomment the following line for custom ipfs datastore location
 
-# Environment=IPFS_PATH=/path/to/your/ipfs/datastore
+#Environment=IPFS_PATH=/path/to/your/ipfs/datastore
 
 ExecStart=/usr/local/bin/ipfs daemon
 
@@ -280,7 +299,7 @@ vi /etc/profile
 
 #profile
 
-# Connection to ElectrumX server
+#Connection to ElectrumX server
 
 export KEVA_ELECTRUM_HOST=your domain
 
@@ -289,7 +308,7 @@ export KEVA_ELECTRUM_SSL_PORT=50002
 
 export KEVA_MIN_PAYMENT=9
 
-# Payment address
+#Payment address
 
 export KEVA_PAYMENT_ADDRESS=your keva address
 
