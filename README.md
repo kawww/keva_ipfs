@@ -124,8 +124,8 @@ sudo certbot certonly --standalone
 #setup email and domain
 
 sudo chmod -R 755 /etc/letsencrypt/archive/
-sudo chmod -R 755 /etc/letsencrypt/live/
 
+sudo chmod -R 755 /etc/letsencrypt/live/
 
 #setup electrumx profile
 
@@ -322,7 +322,6 @@ vi /etc/profile
 
 export KEVA_ELECTRUM_HOST=your domain
 
-
 export KEVA_ELECTRUM_SSL_PORT=50002
 
 export KEVA_MIN_PAYMENT=9
@@ -336,7 +335,6 @@ export KEVA_TLS_ENABLED=1
 export KEVA_TLS_KEY=/etc/letsencrypt/live/$KEVA_ELECTRUM_HOST/privkey.pem
 
 export KEVA_TLS_CERT=/etc/letsencrypt/live/$KEVA_ELECTRUM_HOST/fullchain.pem
-
 
 #reboot to test
 
