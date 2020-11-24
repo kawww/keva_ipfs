@@ -215,10 +215,15 @@ systemctl enable keva
 #install ipfs
 
 wget https://dist.ipfs.io/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz
+
 tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz
+
 cd go-ipfs
+
 sudo bash install.sh
+
 ipfs init   # Initialize the IPFS peer. Only need to run once.
+
 ipfs daemon   # Start the daemon
 
 #start ipfs when reboot
@@ -230,13 +235,17 @@ vi /etc/systemd/system/ipfs.service
 [Unit]
 
 Description=IPFS daemon
+
 After=network.target
 
 [Service]
 
 ### Uncomment the following line for custom ipfs datastore location
+
 # Environment=IPFS_PATH=/path/to/your/ipfs/datastore
+
 ExecStart=/usr/local/bin/ipfs daemon
+
 Restart=on-failure
 
 [Install]
@@ -254,11 +263,15 @@ systemctl enable ipfs
 #install go
 
 wget https://golang.org/dl/go1.15.5.linux-amd64.tar.gz
+
 sudo tar -C /usr/local -xzf go1.15.5.linux-amd64.tar.gz
+
 export PATH=$PATH:/usr/local/go/bin
 
 git clone https://github.com/kevacoin-project/keva_ipfs
+
 cd keva_ipfs
+
 go build .
 
 #setup server
@@ -270,6 +283,8 @@ vi /etc/profile
 # Connection to ElectrumX server
 
 export KEVA_ELECTRUM_HOST=your domain
+
+
 export KEVA_ELECTRUM_SSL_PORT=50002
 
 export KEVA_MIN_PAYMENT=9
@@ -278,10 +293,12 @@ export KEVA_MIN_PAYMENT=9
 
 export KEVA_PAYMENT_ADDRESS=your keva address
 
-# TLS/SSL setting
 export KEVA_TLS_ENABLED=1
+
 export KEVA_TLS_KEY=/etc/letsencrypt/live/$KEVA_ELECTRUM_HOST/privkey.pem
+
 export KEVA_TLS_CERT=/etc/letsencrypt/live/$KEVA_ELECTRUM_HOST/fullchain.pem
+
 
 #reboot to test
 
