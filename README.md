@@ -23,7 +23,7 @@ sudo swapon --show
 
 #use free -m to check
 
-wget https://github.com/kevacoin-project/kevacoin/releases/download/v0.16.6.0/kevacoin-0.16.6.0.tar.gz
+wget https://github.com/kevacoin-project/kevacoin/releases/download/v0.16.7.0/kevacoin-0.16.7.0.tar.gz
 
 mkdir kevacoin
 
