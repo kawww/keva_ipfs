@@ -4,6 +4,8 @@ apt-get update && apt-get -y upgrade
 
 #add ram
 
+sudo swapoff -a
+
 sudo fallocate -l 4G /swapfile && \
 
 sudo chmod 600 /swapfile && \
