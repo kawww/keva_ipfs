@@ -27,7 +27,7 @@ wget https://github.com/kevacoin-project/kevacoin/releases/download/v0.16.7.0/ke
 
 mkdir kevacoin
 
-tar zxvf kevacoin-0.16.6.0.tar.gz -C kevacoincd keva
+tar zxvf kevacoin-0.16.7.0.tar.gz -C kevacoincd keva
 
 cd kevacoin
 
