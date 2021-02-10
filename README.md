@@ -200,6 +200,8 @@ ALLOW_ROOT=True
 
 #install exlectrum
 
+apt install git
+
 git clone https://github.com/kevacoin-project/electrumx
 
 #check block stats
@@ -213,6 +215,7 @@ systemctl daemon-reload
 systemctl start electrumx.kevacoin.service
 
 systemctl status electrumx.kevacoin.service
+
 
 systemctl enable electrumx.kevacoin.service
 
