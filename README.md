@@ -1,8 +1,8 @@
-#ubuntu 20.04
+# ubuntu 20.04
 
 apt-get update && apt-get -y upgrade
 
-#add ram
+# add ram
 
 sudo swapoff -a
 
@@ -21,7 +21,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab && \
 sudo swapon --show
 
 
-#use free -m to check
+# use free -m to check
 
 wget https://github.com/kevacoin-project/kevacoin/releases/download/v0.16.7.0/kevacoin-0.16.7.0.tar.gz
 
@@ -47,11 +47,11 @@ cd /root/.kevacoin
 
 rm -rf *
 
-#create new conf
+# create new conf
 
 vi kevacoin.conf
 
-#change your own user/password/port
+# change your own user/password/port
 
 rpcuser=galaxy
 
@@ -65,7 +65,7 @@ addressindex=1
 
 txindex=1
 
-#run kevacoin daemon
+# run kevacoin daemon
 
 cd /root/kevacoin/bin
 
@@ -75,11 +75,11 @@ cd /root/kevacoin/bin
 
 ./kevacoin-cli get_info
 
-#electrumx https://kevacoin.org/keva_electrumx.html
+# electrumx https://kevacoin.org/keva_electrumx.html
 
 cd /root
 
-#python
+# python
 
 sudo apt install python3-pip
 
@@ -109,7 +109,7 @@ python3.8 -m pip install git+git://github.com/twmht/python-rocksdb.git
 
 apt-get update && apt-get -y upgrade
 
-#domain
+# domain
 
 sudo apt-get update
 
@@ -131,7 +131,7 @@ sudo chmod -R 755 /etc/letsencrypt/archive/
 
 sudo chmod -R 755 /etc/letsencrypt/live/
 
-#setup electrumx profile
+# setup electrumx profile
 
 mkdir kevax
 
@@ -186,7 +186,7 @@ INITIAL_CONCURRENT=20
 
 COST_HARD_LIMIT=1000000
 
-#change your user:password and port
+# change your user:password and port
 
 DAEMON_URL = http://galaxy:frontier@127.0.0.1:9992/
 
@@ -198,17 +198,17 @@ SSL_KEYFILE=/etc/letsencrypt/live/your doamin/privkey.pem
 
 ALLOW_ROOT=True
 
-#install exlectrum
+# install exlectrum
 
 apt install git
 
 git clone https://github.com/kevacoin-project/electrumx
 
-#check block stats
+# check block stats
 
 ./kevacoin/bin/kevacoin-cli get_info
 
-#if sync ok, run electrumx.
+# if sync ok, run electrumx.
 
 systemctl daemon-reload
 
@@ -219,7 +219,7 @@ systemctl status electrumx.kevacoin.service
 
 systemctl enable electrumx.kevacoin.service
 
-#start kevacoin daemon when reboot
+# start kevacoin daemon when reboot
 
 vi /etc/systemd/system/keva.service
 
@@ -245,7 +245,7 @@ TimeoutStopSec=30min
 
 WantedBy=multi-user.target
 
-#check
+# check
 
 systemctl daemon-reload
 
@@ -257,7 +257,7 @@ systemctl status keva
 
 systemctl enable keva
 
-#install ipfs
+# install ipfs
 
 wget https://dist.ipfs.io/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz
 
@@ -275,7 +275,7 @@ ipfs daemon   # Start the daemon
 
 vi /etc/systemd/system/ipfs.service
 
-#profile
+# profile
 
 [Unit]
 
@@ -305,7 +305,7 @@ systemctl status ipfs
 
 systemctl enable ipfs
 
-#install go
+# install go
 
 wget https://golang.org/dl/go1.15.5.linux-amd64.tar.gz
 
@@ -319,7 +319,7 @@ cd keva_ipfs
 
 go build .
 
-#setup server
+# setup server
 
 vi /etc/profile
 
@@ -347,7 +347,7 @@ export KEVA_TLS_CERT=/etc/letsencrypt/live/$KEVA_ELECTRUM_HOST/fullchain.pem
 
 reboot
 
-#start go
+# start go
 
 cd keva_ipfs
 
