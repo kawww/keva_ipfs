@@ -269,9 +269,13 @@ cd go-ipfs
 
 sudo bash install.sh
 
-ipfs init   # Initialize the IPFS peer. Only need to run once.
+ipfs init 
 
-ipfs daemon   # Start the daemon
+# Start the daemon
+
+ipfs daemon   
+
+ctrl+c to stop
 
 #start ipfs when reboot
 
@@ -316,6 +320,8 @@ sudo tar -C /usr/local -xzf go1.15.5.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
 git clone https://github.com/kevacoin-project/keva_ipfs
+
+cd ..
 
 cd keva_ipfs
 
