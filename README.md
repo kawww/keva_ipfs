@@ -43,7 +43,7 @@ cd bin
 
 cd /root/.kevacoin
 
-#clear 
+# clear 
 
 rm -rf *
 
@@ -92,6 +92,8 @@ python3.8 -m pip install pylru
 python3.8 -m pip install plyvel
 
 python3.8 -m pip install aiorpcx
+
+python3.8 -m pip install aiorpcX==0.18.4
 
 sudo apt install python3.8-dev
 
