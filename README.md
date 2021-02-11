@@ -165,7 +165,7 @@ TimeoutStopSec=30min
 
 WantedBy=multi-user.target
 
-#electrumx profile
+# electrumx profile
 
 cd /root
 
@@ -188,7 +188,7 @@ INITIAL_CONCURRENT=20
 
 COST_HARD_LIMIT=1000000
 
-# change your user:password and port
+#change your user:password and port
 
 DAEMON_URL = http://galaxy:frontier@127.0.0.1:9992/
 
